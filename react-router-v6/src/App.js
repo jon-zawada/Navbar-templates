@@ -1,4 +1,4 @@
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, Link, useLocation } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { BookList } from './pages/BookList';
 import { Book } from './pages/Book';
@@ -7,6 +7,7 @@ import {NotFound} from './pages/NotFound';
 import { BookLayout } from './BookLayout';
 
 function App() {
+  const location = useLocation();
   return (
     <>
     <Routes>
@@ -15,7 +16,7 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" state='HI'>Home</Link>
           </li>
           <li>
             <Link to="/books">Books</Link>
